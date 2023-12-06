@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Register</title>
@@ -53,11 +53,16 @@
         signupbtn.onclick = function () {
             formbx.classList.add('active');
             body.classList.add('active');
+            alert("Are you sure you want to sign up?");
         };
 
         signinbtn.onclick = function () {
             formbx.classList.remove('active');
             body.classList.remove('active');
+            if (validateLoginForm()) {
+                alert('Login successful!');
+                window.location.href = 'index.html'; // Redirect to index.html
+            }
         };
 
         function validateLoginForm() {
@@ -68,8 +73,6 @@
                 alert('Please fill in all fields.');
                 return false;
             }
-
-           
 
             return true; // Submit the form
         }
@@ -91,8 +94,7 @@
                 return false;
             }
 
-           
-
+            alert('Signup successful! You are now signed in.');
             return true; // Submit the form
         }
     </script>
